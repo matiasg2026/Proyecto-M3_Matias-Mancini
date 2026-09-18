@@ -1,10 +1,6 @@
 {
   "rewrites": [
     {
-      "source": "/",
-      "destination": "/src/index.html"
-    },
-    {
       "source": "/home",
       "destination": "/src/index.html"
     },
@@ -15,43 +11,6 @@
     {
       "source": "/about",
       "destination": "/src/index.html"
-    },
-    {
-      "source": "/styles.css",
-      "destination": "/src/styles.css"
-    },
-    {
-      "source": "/app.js",
-      "destination": "/src/app.js"
-    },
-    {
-      "source": "/router.js",
-      "destination": "/src/router.js"
-    },
-    {
-      "source": "/navigation.js",
-      "destination": "/src/navigation.js"
-    },
-    {
-      "source": "/home.js",
-      "destination": "/src/home.js"
-    },
-    {
-      "source": "/chat.js",
-      "destination": "/src/chat.js"
-    },
-    {
-      "source": "/about.js",
-      "destination": "/src/about.js"
-    },
-    { 
-      "source": "/notFound.js",
-      "destination": "/src/notFound.js"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/src/index.html"
     }
-
   ]
 }
