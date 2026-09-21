@@ -1,5 +1,6 @@
 export function renderChat() {
   const app = document.querySelector("#app");
+  const history = [];
 
   app.innerHTML = `
     <section class="chat-mf">
@@ -42,6 +43,15 @@ export function renderChat() {
 
     const text = input.value.trim();
 
+      history.push({
+        role: "user",
+        parts: [
+     {
+        text,
+     },
+   ],
+  });
+
     if (!text) return;
 
     const message = document.createElement("p");
@@ -68,12 +78,17 @@ export function renderChat() {
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({
-          message: text
-        })
+         body: JSON.stringify({
+        payload: {
+          message: text,
+          history 
+         },
+         model: "gemini-3.5-flash-lite"
+       })
       });
 
       const data = await response.json();
+      
 
       if (!response.ok) {
         throw new Error(
@@ -81,8 +96,19 @@ export function renderChat() {
         );
       }
 
-      characterMessage.textContent = data.response;
+     const answerText =
+       data.candidates[0].content.parts[0].text;
 
+     characterMessage.textContent = answerText;
+
+     history.push({
+       role: "model",
+       parts: [
+    {
+       text: answerText,
+    },
+  ],
+  });
     } catch (error) {
       characterMessage.textContent =
         "No pude responder en este momento. Intentá nuevamente.";
