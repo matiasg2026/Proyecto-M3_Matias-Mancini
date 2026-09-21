@@ -9,10 +9,7 @@ export default async function handler(req, res) {
 
   const history = payload.history || [];
 
-
   const apiKey = process.env.GEMINI_API_KEY;
-
-  
 
   if (!apiKey) {
     return res.status(500).json({
@@ -33,8 +30,6 @@ export default async function handler(req, res) {
     };
 
     const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
-     
-
 
     const geminiResponse = await fetch(endpoint, {
       method: "POST",
@@ -42,21 +37,35 @@ export default async function handler(req, res) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-         systemInstruction: {
+        systemInstruction: {
           parts: [
-       {
-        text: "Responde como Homero Simpson. Habla de forma divertida, ingenua y con humor, como el personaje.",
-       },
-    ],
-  },
+            {
+              text: "Responde como Homero Simpson. Habla de forma divertida, ingenua y con humor. Sé breve y conciso, pero completa siempre la idea antes de terminar.",
+            },
+          ],
+        },
         contents: [...history, userTurn],
+        generationConfig: {
+          temperature: 0.7,
+          maxOutputTokens: 300,
+        },
       }),
     });
 
-
     const data = await geminiResponse.json();
 
-    
+    console.log(
+      "Tokens generados:",
+      data.usageMetadata?.candidatesTokenCount
+    );
+
+    if (geminiResponse.status === 429) {
+      const retryAfter = geminiResponse.headers.get("Retry-After");
+
+      if (retryAfter) {
+        res.setHeader("Retry-After", retryAfter);
+      }
+    }
 
     return res.status(geminiResponse.status).json(data);
   } catch (error) {

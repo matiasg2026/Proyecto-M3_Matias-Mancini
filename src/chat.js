@@ -1,6 +1,25 @@
+function debounce(fn, delay) {
+  let timer;
+
+  return (...args) => {
+    clearTimeout(timer);
+
+    timer = setTimeout(() => {
+      fn(...args);
+    }, delay);
+  };
+}
+
+function wait(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
+
 export function renderChat() {
   const app = document.querySelector("#app");
   const history = [];
+  let isLoading = false; 
 
   app.innerHTML = `
     <section class="chat-mf">
@@ -37,11 +56,21 @@ export function renderChat() {
   const form = document.querySelector(".chat-mf__form");
   const input = form.querySelector("input");
   const messages = document.querySelector(".chat-mf__messages");
+  const button = form.querySelector("button");
 
-  form.addEventListener("submit", async (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
+    if (isLoading) return;
     const text = input.value.trim();
+
+    if (!text) return;
+
+    isLoading = true;
+    button.disabled = true;
+
+     console.log("Submit ejecutado");
+
 
       history.push({
         role: "user",
@@ -52,7 +81,7 @@ export function renderChat() {
    ],
   });
 
-    if (!text) return;
+  
 
     const message = document.createElement("p");
     message.classList.add("chat-message", "chat-message--user");
@@ -73,28 +102,73 @@ export function renderChat() {
     messages.appendChild(characterMessage);
 
     try {
-      const response = await fetch("/api/chat", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-         body: JSON.stringify({
+  const sendMessage = () => {
+    return fetch("/api/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
         payload: {
           message: text,
-          history 
-         },
-         model: "gemini-3.5-flash-lite"
-       })
-      });
+          history
+        },
+        model: "gemini-3.5-flash-lite"
+      })
+    });
+  };
 
-      const data = await response.json();
-      
+  let response = await sendMessage();
+  let data = await response.json();
 
-      if (!response.ok) {
-        throw new Error(
-          data.error || "Error al comunicarse con el servidor"
-        );
-      }
+  if (!response.ok) {
+    const error = new Error(
+      data.error?.message ||
+      data.error ||
+      "Error al comunicarse con el servidor"
+    );
+
+    error.status = response.status;
+
+    const retryAfter = response.headers.get("Retry-After");
+
+    if (retryAfter) {
+      error.retryAfterSeconds = Number(retryAfter);
+    }
+
+    if (response.status === 429) {
+      error.isRateLimit = true;
+    }
+
+    if (error.isRateLimit) {
+  let seconds = error.retryAfterSeconds || 5;
+
+  while (seconds > 0) {
+    characterMessage.textContent =
+      `Esperando para reintentar (${seconds} segundos)...`;
+
+    await wait(1000);
+
+    seconds--;
+  }
+
+  characterMessage.textContent =
+    "Reintentando...";
+
+  response = await sendMessage();
+      data = await response.json();
+
+    if (!response.ok) {
+  throw new Error(
+    data.error?.message ||
+    data.error ||
+    "No se pudo completar el reintento."
+  );
+}
+    } else {
+      throw error;
+    }
+  }
 
      const answerText =
        data.candidates[0].content.parts[0].text;
@@ -114,6 +188,11 @@ export function renderChat() {
         "No pude responder en este momento. Intentá nuevamente.";
 
       console.error(error);
+    } finally {
+      isLoading = false;
+      button.disabled = false;
     }
-  });
+  }; 
+ 
+  form.addEventListener("submit", handleSubmit);
 }
