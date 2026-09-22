@@ -18,6 +18,7 @@ Local: http://localhost:3000
 
 
 🚀 Ejecutar el proyecto localmente
+
 1. Clonar el repositorio
 git clone git@github.com:matiasg2026/Proyecto-M3_Matias-Mancini.git
 cd Proyecto-M3_Matias-Mancini
@@ -58,6 +59,7 @@ npm run dev
 Luego ingresar en:
 
 http://localhost:3000
+
 🧪 Ejecutar los tests
 
 Para ejecutar las pruebas:
@@ -86,20 +88,22 @@ vercel --prod
 En Vercel también se debe configurar la variable de entorno:
 
 GEMINI_API_KEY
+
 📸 Capturas de pantalla
+
 Página principal
 
-
+./Img/Imagen01.png
 
 
 Chat con Homer Simpson
 
 
-
+./Img/Imagen02.png
 
 Página About
 
-
+./Img/Imagen03.png
 
 
 🤖 Registro del uso de AI
@@ -114,6 +118,29 @@ Diseñar y revisar los tests realizados con Vitest.
 Mejorar la documentación del proyecto.
 
 La implementación, las pruebas y las decisiones finales del proyecto fueron realizadas y verificadas durante el desarrollo.
+
+./Img/Imagen04.png
+./Img/Imagen05.png
+./Img/Imagen06.png
+./Img/Imagen07.png
+./Img/Imagen08.png
+./Img/Imagen09.png
+./Img/Imagen10.png
+./Img/Imagen11.png
+./Img/Imagen12.png
+./Img/Imagen13.png
+./Img/Imagen14.png
+./Img/Imagen15.png
+./Img/Imagen16.png
+./Img/Imagen17.png
+./Img/Imagen18.png
+./Img/Imagen19.png
+./Img/Imagen20.png
+./Img/Imagen21.png
+./Img/Imagen22.png
+./Img/Imagen23.png
+./Img/Imagen24.png
+./Img/Imagen25.png
 
 📦 Repositorio
 

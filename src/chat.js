@@ -16,6 +16,12 @@ function wait(ms) {
   });
 }
 
+function scrollToBottom(element) {
+  setTimeout(() => {
+    element.scrollTop = element.scrollHeight;
+  }, 0);
+}
+
 export function renderChat() {
   const app = document.querySelector("#app");
   const history = [];
@@ -88,6 +94,7 @@ export function renderChat() {
     message.textContent = text;
 
     messages.appendChild(message);
+   message.scrollIntoView({ behavior: "smooth", block: "end" });
 
     input.value = "";
 
@@ -100,6 +107,7 @@ export function renderChat() {
     characterMessage.textContent = "Escribiendo...";
 
     messages.appendChild(characterMessage);
+    characterMessage.scrollIntoView({ behavior: "smooth", block: "end" });
 
     try {
   const sendMessage = () => {
@@ -174,6 +182,7 @@ export function renderChat() {
        data.candidates[0].content.parts[0].text;
 
      characterMessage.textContent = answerText;
+     characterMessage.scrollIntoView({ behavior: "smooth", block: "end" });
 
      history.push({
        role: "model",
