@@ -89,21 +89,19 @@ En Vercel también se debe configurar la variable de entorno:
 
 GEMINI_API_KEY
 
-📸 Capturas de pantalla
+## 📸 Capturas de pantalla
 
-Página principal
+### Página principal
 
-./Img/Imagen01.png
+![Página principal](./Img/Imagen01.png)
 
+### Chat con Homer Simpson
 
-Chat con Homer Simpson
+![Chat con Homer Simpson](./Img/Imagen02.png)
 
+### Página About
 
-./Img/Imagen02.png
-
-Página About
-
-./Img/Imagen03.png
+![Página About](./Img/Imagen03.png)
 
 
 🤖 Registro del uso de AI
