@@ -140,7 +140,7 @@ La implementación, las pruebas y las decisiones finales del proyecto fueron rea
 ./Img/Imagen22.png
 ./Img/Imagen23.png
 ./Img/Imagen24.png
-./Img/Imagen25.png
+./Img/imagen25.png
 
 📦 Repositorio
 
