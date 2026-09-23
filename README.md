@@ -1,30 +1,72 @@
-ComicSansCon
+# 🎭 ComicSansCon
 
-Aplicación web Single Page Application (SPA) desarrollada como Proyecto Integrador 3 de Henry.
+Aplicación web desarrollada como Proyecto Integrador 3 de Henry.
 
-ComicSansCon permite conversar con Homer Simpson utilizando inteligencia artificial mediante Gemini y una función serverless de Vercel.
+ComicSansCon es una **Single Page Application (SPA)** que permite interactuar mediante un chat con un personaje ficticio. En este proyecto el personaje elegido es **Homer Simpson**.
 
-🎭 Personaje elegido: Homer Simpson
+La aplicación utiliza **Gemini AI** para generar las respuestas del personaje y una **Vercel Function** para mantener la API Key protegida.
 
-El personaje elegido para la aplicación es Homer Simpson, protagonista de la serie animada Los Simpson.
+---
 
-La aplicación utiliza la imagen del personaje obtenida desde The Simpsons API y Gemini para generar respuestas configuradas con la personalidad característica de Homer Simpson: divertida, ingenua y con humor.
+## 🎭 Personaje elegido: Homer Simpson
 
-🔗 Enlaces del proyecto
+El personaje seleccionado para la aplicación es **Homer Simpson**, de la serie *The Simpsons*.
 
-GitHub: https://github.com/matiasg2026/Proyecto-M3_Matias-Mancini
-Vercel: https://proyecto-integrador-matias.vercel.app
-Local: http://localhost:3000
+La aplicación presenta:
 
+- 👤 Perfil del personaje.
+- 💬 Chat interactivo.
+- 🤖 Respuestas generadas mediante Gemini AI.
+- 🎨 Interfaz adaptada a la temática de *The Simpsons*.
+- 📱 Diseño responsive y mobile-first.
+- 🧭 Navegación SPA sin recargar la página.
 
-🚀 Ejecutar el proyecto localmente
+---
 
-1. Clonar el repositorio
+## 🔗 Enlaces del proyecto
+
+- 💻 **GitHub:**  
+  [https://github.com/matiasg2026/Proyecto-M3_Matias-Mancini](https://github.com/matiasg2026/Proyecto-M3_Matias-Mancini)
+
+- 🌐 **Aplicación desplegada en Vercel:**  
+  [https://proyecto-integrador-matias.vercel.app](https://proyecto-integrador-matias.vercel.app)
+
+- 🖥️ **Aplicación local:**  
+  [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+- HTML5
+- CSS3
+- JavaScript
+- Vite
+- Vitest
+- Node.js
+- Vercel
+- Vercel Functions
+- Gemini AI
+- The Simpsons API
+- Git
+- GitHub
+
+---
+
+# 🚀 Ejecutar el proyecto localmente
+
+### 1. Clonar el repositorio
+
+Abrir una terminal y ejecutar:
+
 git clone git@github.com:matiasg2026/Proyecto-M3_Matias-Mancini.git
 cd Proyecto-M3_Matias-Mancini
+
+
 2. Instalar las dependencias
 npm install
-3. Crear y configurar el archivo .env
+
+3. Crear el archivo .env
 
 En la raíz del proyecto se debe crear un archivo llamado:
 
@@ -33,51 +75,123 @@ En la raíz del proyecto se debe crear un archivo llamado:
 Dentro del archivo colocar:
 
 GEMINI_API_KEY=tu_api_key
-🔑 ¿Cómo obtener la API Key de Gemini?
 
-Para generar una API Key se debe ingresar a Google AI Studio:
+⚠️ Importante: la API Key es privada y no debe subirse a GitHub.
 
-https://aistudio.google.com/
+El proyecto utiliza variables de entorno para evitar incluir la clave directamente en el código fuente.
 
-Una vez dentro:
+🔑 Obtener una API Key de Gemini
+
+Para obtener una API Key se debe ingresar a:
+
+Google AI Studio
+
+Luego:
 
 Iniciar sesión con una cuenta de Google.
 Ingresar a la sección API Keys.
 Seleccionar Create API key.
-Seguir los pasos indicados para crear la clave.
+Seguir los pasos indicados.
 Copiar la API Key generada.
-Colocarla en el archivo .env como GEMINI_API_KEY.
+Colocarla en el archivo .env.
 
-La API Key debe mantenerse privada y no debe subirse a GitHub. El proyecto utiliza variables de entorno para mantenerla fuera del código fuente.
+Ejemplo:
 
-4. Ejecutar la aplicación
+GEMINI_API_KEY=tu_api_key
 
-El proyecto utiliza Vercel Dev para ejecutar localmente la aplicación y su función serverless:
+La API Key no debe compartirse públicamente ni subirse al repositorio.
+
+▶️ Ejecutar la aplicación
+
+El proyecto utiliza Vercel Dev para ejecutar localmente tanto la aplicación como la función serverless.
+
+Ejecutar:
 
 npm run dev
 
-Luego ingresar en:
+La aplicación estará disponible en:
 
 http://localhost:3000
 
+También puede ejecutarse directamente mediante:
+
+vercel dev
 🧪 Ejecutar los tests
 
-Para ejecutar las pruebas:
+Para ejecutar las pruebas automatizadas:
 
 npm test
 
-El proyecto cuenta con 4 tests realizados con Vitest:
+El proyecto cuenta con 4 tests realizados con Vitest.
 
-Respuesta correcta de fetchJson.
-Manejo de errores HTTP.
-Manejo de errores de red.
-Manejo de respuestas vacías.
+Las pruebas verifican:
 
-Los tests utilizan mocks para evitar llamadas reales a la API durante las pruebas.
+✅ Respuesta correcta de fetchJson.
+✅ Manejo de errores HTTP.
+✅ Manejo de errores de red.
+✅ Manejo de respuestas vacías.
+
+Los tests utilizan mocks para evitar realizar llamadas reales a APIs externas durante las pruebas.
 
 ☁️ Desplegar en Vercel
 
-Para desplegar el proyecto:
+El proyecto utiliza Vercel para alojar la aplicación y ejecutar la función serverless:
+
+/api/chat
+1. Instalar Vercel CLI
+
+Si todavía no está instalada:
+
+npm install -g vercel
+
+Comprobar la instalación:
+
+vercel --version
+2. Iniciar sesión
+
+Ejecutar:
+
+vercel login
+
+Seguir las instrucciones mostradas en la terminal para completar el inicio de sesión.
+
+3. Ejecutar localmente con Vercel
+
+Para iniciar el entorno local:
+
+vercel dev
+
+También puede utilizarse:
+
+npm run dev
+
+La aplicación estará disponible en:
+
+http://localhost:3000
+
+🔐 Configurar GEMINI_API_KEY en Vercel
+
+Para que la aplicación desplegada pueda comunicarse con Gemini, es necesario configurar la variable de entorno en Vercel.
+
+Configuración
+Ingresar al proyecto en Vercel.
+Abrir Settings.
+Seleccionar Environment Variables.
+Crear una nueva variable.
+En Name colocar:
+GEMINI_API_KEY
+En Value colocar la API Key de Gemini.
+Seleccionar los entornos correspondientes:
+Production
+Preview
+Development
+Guardar la configuración.
+
+La API Key es utilizada desde la función serverless y no se incluye directamente en el código JavaScript del cliente.
+
+🚀 Realizar un despliegue
+
+Para realizar un despliegue de prueba:
 
 vercel
 
@@ -85,9 +199,7 @@ Para realizar un despliegue de producción:
 
 vercel --prod
 
-En Vercel también se debe configurar la variable de entorno:
-
-GEMINI_API_KEY
+Después del despliegue, Vercel proporcionará la URL correspondiente a la aplicación
 
 ## 📸 Capturas de pantalla
 
@@ -95,14 +207,13 @@ GEMINI_API_KEY
 
 ![Página principal](./Img/Imagen01.png)
 
-### Chat con Homer Simpson
+### Chat con Homero Simpson
 
-![Chat con Homer Simpson](./Img/Imagen02.png)
+![Chat con Homero Simpson](./Img/Imagen02.png)
 
 ### Página About
 
 ![Página About](./Img/Imagen03.png)
-
 
 🤖 Registro del uso de AI
 
@@ -117,29 +228,51 @@ Mejorar la documentación del proyecto.
 
 La implementación, las pruebas y las decisiones finales del proyecto fueron realizadas y verificadas durante el desarrollo.
 
-./Img/Imagen04.png
-./Img/Imagen05.png
-./Img/Imagen06.png
-./Img/Imagen07.png
-./Img/Imagen08.png
-./Img/Imagen09.png
-./Img/Imagen10.png
-./Img/Imagen11.png
-./Img/Imagen12.png
-./Img/Imagen13.png
-./Img/Imagen14.png
-./Img/Imagen15.png
-./Img/Imagen16.png
-./Img/Imagen17.png
-./Img/Imagen18.png
-./Img/Imagen19.png
-./Img/Imagen20.png
-./Img/Imagen21.png
-./Img/Imagen22.png
-./Img/Imagen23.png
-./Img/Imagen24.png
-./Img/imagen25.png
+![Uso de AI - Captura 04](./Img/Imagen04.png)
+
+![Uso de AI - Captura 05](./Img/Imagen05.png)
+
+![Uso de AI - Captura 06](./Img/Imagen06.png)
+
+![Uso de AI - Captura 07](./Img/Imagen07.png)
+
+![Uso de AI - Captura 08](./Img/Imagen08.png)
+
+![Uso de AI - Captura 09](./Img/Imagen09.png)
+
+![Uso de AI - Captura 10](./Img/Imagen10.png)
+
+![Uso de AI - Captura 11](./Img/Imagen11.png)
+
+![Uso de AI - Captura 12](./Img/Imagen12.png)
+
+![Uso de AI - Captura 13](./Img/Imagen13.png)
+
+![Uso de AI - Captura 14](./Img/Imagen14.png)
+
+![Uso de AI - Captura 15](./Img/Imagen15.png)
+
+![Uso de AI - Captura 16](./Img/Imagen16.png)
+
+![Uso de AI - Captura 17](./Img/Imagen17.png)
+
+![Uso de AI - Captura 18](./Img/Imagen18.png)
+
+![Uso de AI - Captura 19](./Img/Imagen19.png)
+
+![Uso de AI - Captura 20](./Img/Imagen20.png)
+
+![Uso de AI - Captura 21](./Img/Imagen21.png)
+
+![Uso de AI - Captura 22](./Img/Imagen22.png)
+
+![Uso de AI - Captura 23](./Img/Imagen23.png)
+
+![Uso de AI - Captura 24](./Img/Imagen24.png)
+
+![Uso de AI - Captura 25](./Img/imagen25.png)
+
 
 📦 Repositorio
 
-https://github.com/matiasg2026/Proyecto-M3_Matias-Mancini.git
+https://github.com/matiasg2026/Proyecto-M3_Matias-Mancini
