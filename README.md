@@ -59,8 +59,8 @@ La aplicación presenta:
 
 Abrir una terminal y ejecutar:
 
-`git` clone `git`@github.com:matiasg2026/Proyecto-M3_Matias-Mancini.git
-`cd` Proyecto-M3_Matias-Mancini
+[https://github.com/matiasg2026/Proyecto-M3_Matias-Mancini](https://github.com/matiasg2026/Proyecto-M3_Matias-Mancini)
+
 
 
 2. Instalar las dependencias
