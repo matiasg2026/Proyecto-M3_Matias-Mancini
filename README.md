@@ -140,6 +140,7 @@ Los tests utilizan mocks para evitar realizar llamadas reales a APIs externas du
 El proyecto utiliza Vercel para alojar la aplicación y ejecutar la función serverless:
 
 /api/chat
+
 1. Instalar Vercel CLI
 
 Si todavía no está instalada:
@@ -149,6 +150,7 @@ npm install -g vercel
 Comprobar la instalación:
 
 vercel --version
+
 2. Iniciar sesión
 
 Ejecutar:
@@ -189,7 +191,6 @@ GEMINI_API_KEY
 7. Seleccionar los entornos correspondientes:
 `Production`
 `Preview`
-`Development`
 `Guardar la configuración.`
 
 La API Key es utilizada desde la función serverless y no se incluye directamente en el código JavaScript del cliente.
