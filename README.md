@@ -8,9 +8,9 @@ La aplicación utiliza **Gemini AI** para generar las respuestas del personaje y
 
 ---
 
-## 🎭 Personaje elegido: Homer Simpson
+## 🎭 Personaje elegido: Homero Simpson
 
-El personaje seleccionado para la aplicación es **Homer Simpson**, de la serie *The Simpsons*.
+El personaje seleccionado para la aplicación es **Homero Simpson**, de la serie *The Simpsons*.
 
 La aplicación presenta:
 
@@ -55,12 +55,12 @@ La aplicación presenta:
 
 # 🚀 Ejecutar el proyecto localmente
 
-### 1. Clonar el repositorio
+## 1. Clonar el repositorio
 
 Abrir una terminal y ejecutar:
 
-git clone git@github.com:matiasg2026/Proyecto-M3_Matias-Mancini.git
-cd Proyecto-M3_Matias-Mancini
+`git` clone `git`@github.com:matiasg2026/Proyecto-M3_Matias-Mancini.git
+`cd` Proyecto-M3_Matias-Mancini
 
 
 2. Instalar las dependencias
