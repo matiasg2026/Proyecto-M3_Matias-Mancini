@@ -80,7 +80,7 @@ GEMINI_API_KEY=tu_api_key
 
 El proyecto utiliza variables de entorno para evitar incluir la clave directamente en el código fuente.
 
-🔑 Obtener una API Key de Gemini
+## 🔑 Obtener una API Key de Gemini
 
 Para obtener una API Key se debe ingresar a:
 
@@ -88,12 +88,12 @@ Google AI Studio
 
 ## Luego:
 
--Iniciar sesión con una cuenta de Google.
--Ingresar a la sección API Keys.
--Seleccionar Create API key.
--Seguir los pasos indicados.
--Copiar la API Key generada.
--Colocarla en el archivo .env.
+- Iniciar sesión con una cuenta de Google.
+- Ingresar a la sección **API Keys**.
+- Seleccionar **Create API key**.
+- Seguir los pasos indicados.
+- Copiar la API Key generada.
+- Colocarla en el archivo `.env`.
 
 Ejemplo:
 
@@ -101,7 +101,7 @@ GEMINI_API_KEY=tu_api_key
 
 La API Key no debe compartirse públicamente ni subirse al repositorio.
 
-▶️ Ejecutar la aplicación
+## ▶️ Ejecutar la aplicación
 
 El proyecto utiliza Vercel Dev para ejecutar localmente tanto la aplicación como la función serverless.
 
@@ -175,19 +175,22 @@ http://localhost:3000
 
 Para que la aplicación desplegada pueda comunicarse con Gemini, es necesario configurar la variable de entorno en Vercel.
 
-### Configuración: 
-Ingresar al proyecto en Vercel.
-Abrir Settings.
-Seleccionar Environment Variables.
-Crear una nueva variable.
-En Name colocar:
+### Configuración 
+
+1. Ingresar al proyecto en Vercel.
+2. Abrir Settings.
+3. Seleccionar Environment Variables.
+4. Crear una nueva variable.
+5. En `Name` colocar:
+
 GEMINI_API_KEY
-En Value colocar la API Key de Gemini.
-Seleccionar los entornos correspondientes:
-Production
-Preview
-Development
-Guardar la configuración.
+
+6. En Value colocar la API Key de Gemini.
+7. Seleccionar los entornos correspondientes:
+`Production`
+`Preview`
+`Development`
+`Guardar la configuración.`
 
 La API Key es utilizada desde la función serverless y no se incluye directamente en el código JavaScript del cliente.
 
