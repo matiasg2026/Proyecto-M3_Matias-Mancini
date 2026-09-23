@@ -19,7 +19,7 @@ ComicSansCon es una SPA desarrollada con JavaScript, HTML y CSS que permite inte
 El proyecto fue desarrollado con un enfoque Mobile-First y cuenta con tres vistas principales:
 
 - 🏠 **Home**: presentación de la aplicación y del personaje.
-- 💬 **Chat**: espacio principal para conversar con Homer Simpson.
+- 💬 **Chat**: espacio principal para conversar con Homero Simpson.
 - ℹ️ **About**: información sobre la aplicación y su desarrollo.
 
 La navegación entre las vistas se realiza sin recargar la página utilizando la History API del navegador.
@@ -126,7 +126,7 @@ La función Serverless procesa la solicitud y se comunica con Gemini.
 
 ## 🎭 System Prompt
 
-Para mantener la personalidad del personaje, se utiliza un System Prompt que define características de Homer Simpson.
+Para mantener la personalidad del personaje, se utiliza un System Prompt que define características de Homero Simpson.
 
 El prompt establece aspectos como:
 
@@ -137,7 +137,7 @@ El prompt establece aspectos como:
 - Comportamiento del personaje durante la conversación.
 - Limitaciones para evitar respuestas fuera del rol establecido.
 
-De esta manera, Gemini no funciona únicamente como un chatbot genérico, sino que recibe instrucciones específicas para responder interpretando a Homer Simpson.
+De esta manera, Gemini no funciona únicamente como un chatbot genérico, sino que recibe instrucciones específicas para responder interpretando a Homero Simpson.
 
 ## 🧠 Historial de conversación
 
@@ -198,7 +198,7 @@ La experiencia incluye:
 El objetivo es mantener una interacción clara y fluida durante toda la conversación.
 
 ## 🗂️ Estructura del proyecto
-
+```
 Proyecto-M3_Matias-Mancini/
 │
 ├── api/
@@ -233,6 +233,7 @@ Proyecto-M3_Matias-Mancini/
 ├── package-lock.json
 ├── README.md
 └── vercel.json
+```
 
 ### Principales responsabilidades
 
@@ -255,7 +256,7 @@ Proyecto-M3_Matias-Mancini/
 | `vercel.json` | Configuración del deployment y rutas |
 
 ## 🔄 Flujo general de la aplicación
-
+```
  COMICSANSCON
                      │
                      ▼
@@ -290,8 +291,9 @@ Proyecto-M3_Matias-Mancini/
           │
           ▼
       Nuevo mensaje
-
-      ## 🧪 Testing
+```
+      
+##  🧪 Testing
 
 El proyecto utiliza Vitest para realizar tests unitarios.
 
@@ -312,9 +314,10 @@ Los tests cubren diferentes comportamientos de la aplicación, incluyendo:
 
 Los tests se encuentran en:
 
-tests/
+```tests/
 ├── app.test.js
 └── utils.test.js
+```
 
 El objetivo es verificar que las funciones principales continúen funcionando correctamente y detectar errores durante el desarrollo.
 
