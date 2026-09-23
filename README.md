@@ -86,14 +86,14 @@ Para obtener una API Key se debe ingresar a:
 
 Google AI Studio
 
-Luego:
+## Luego:
 
-Iniciar sesión con una cuenta de Google.
-Ingresar a la sección API Keys.
-Seleccionar Create API key.
-Seguir los pasos indicados.
-Copiar la API Key generada.
-Colocarla en el archivo .env.
+-Iniciar sesión con una cuenta de Google.
+-Ingresar a la sección API Keys.
+-Seleccionar Create API key.
+-Seguir los pasos indicados.
+-Copiar la API Key generada.
+-Colocarla en el archivo .env.
 
 Ejemplo:
 
@@ -116,7 +116,9 @@ http://localhost:3000
 También puede ejecutarse directamente mediante:
 
 vercel dev
-🧪 Ejecutar los tests
+
+
+## 🧪 Ejecutar los tests
 
 Para ejecutar las pruebas automatizadas:
 
@@ -124,7 +126,7 @@ npm test
 
 El proyecto cuenta con 4 tests realizados con Vitest.
 
-Las pruebas verifican:
+### Las pruebas verifican:
 
 ✅ Respuesta correcta de fetchJson.
 ✅ Manejo de errores HTTP.
@@ -133,7 +135,7 @@ Las pruebas verifican:
 
 Los tests utilizan mocks para evitar realizar llamadas reales a APIs externas durante las pruebas.
 
-☁️ Desplegar en Vercel
+## ☁️ Desplegar en Vercel
 
 El proyecto utiliza Vercel para alojar la aplicación y ejecutar la función serverless:
 
@@ -169,11 +171,11 @@ La aplicación estará disponible en:
 
 http://localhost:3000
 
-🔐 Configurar GEMINI_API_KEY en Vercel
+## 🔐 Configurar GEMINI_API_KEY en Vercel
 
 Para que la aplicación desplegada pueda comunicarse con Gemini, es necesario configurar la variable de entorno en Vercel.
 
-Configuración
+### Configuración: 
 Ingresar al proyecto en Vercel.
 Abrir Settings.
 Seleccionar Environment Variables.
@@ -189,7 +191,7 @@ Guardar la configuración.
 
 La API Key es utilizada desde la función serverless y no se incluye directamente en el código JavaScript del cliente.
 
-🚀 Realizar un despliegue
+## 🚀 Realizar un despliegue
 
 Para realizar un despliegue de prueba:
 
@@ -215,7 +217,7 @@ Después del despliegue, Vercel proporcionará la URL correspondiente a la aplic
 
 ![Página About](./Img/Imagen03.png)
 
-🤖 Registro del uso de AI
+## 🤖 Registro del uso de AI
 
 Durante el desarrollo del proyecto se utilizó inteligencia artificial como herramienta de asistencia para:
 
@@ -273,6 +275,6 @@ La implementación, las pruebas y las decisiones finales del proyecto fueron rea
 ![Uso de AI - Captura 25](./Img/imagen25.png)
 
 
-📦 Repositorio
+## 📦 Repositorio
 
 https://github.com/matiasg2026/Proyecto-M3_Matias-Mancini
